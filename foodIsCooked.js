@@ -5,10 +5,63 @@
  * @param {string} doneness
  * @returns {boolean} isCooked
  */
-const foodIsCooked = function(kind, internalTemp, doneness) {
-  // Write function HERE
+// const foodIsCooked = function(kind, internalTemp, doneness) {
 
-}
+const foodIsCooked = (chicken) => {
+  let temp; 
+  switch (key) {
+    case value:
+      
+      break;
+  
+    default:
+      break;
+  }
+  }
+
+
+// return kind === "chicken" ? true : false
+
+// if (kind =  ("chicken") && internalTemp >= 165 ) then return doneness = "ready to eat."
+
+// return internalTemp === 
+// }
+
+// const foodIsCooked = [foodArray] => {
+//   return foodArray.length >= 1? true : false; 
+// }
+// function foodisCooked (temperature) {
+//   let temp = temperature <= 135 ? "Rare"
+//     :temperature >= 135 && <= 155 ? "Medium"
+//     : temperature >= 155 ? "Welldone
+//     "
+// }
+
+//   if (kind === "chicken") {
+//     if (internalTemp >= 165) {
+//       return true
+//     } else {
+//       return false
+//     }
+//   } else if (kind === "beef") {
+//     if (doneness === "rare") {
+//     return (internalTemp >= 125 && internalTemp < 135)
+//     }
+//     else if (doneness === "medium") {
+//       {
+//         return (internalTemp > 135 && internalTemp <155)
+//       }
+//     }
+//     else if (doneness === "well")
+//       {
+//         return (internalTemp > 155)
+//       }
+//   } else {
+
+//   }
+
+// }
+
 
 
 
