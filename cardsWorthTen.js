@@ -22,10 +22,25 @@ const cards = [
  * @return {string} displayVal
  */
 const cardsWorthTen = cards => {
- return cards.filter(card => card.val === 10).map(cards => cards.displayVal).join(',');
+   let tenCards =[]
+   for(let i =0;i<cards.length;i++){
+     if(cards[i].val==10){
+       tenCards.push(cards[i].displayVal)
+     }else{
+       continue
+}
+}
+  return tenCards
 };
+let finishedArray=[];
+const cardsWorthTen =(cards) =>{
 
-console.log(cardsWorthTen(cards));
-
+  cards.map(function tenCard(cards){
+    if(cards.val ===10){
+      finishedArray.push(cards.displayVal)
+    }
+  })
+  return finishedArray
+}
 console.log(cardsWorthTen(cards));
 // should return/log "10, Jack, Queen, King"
