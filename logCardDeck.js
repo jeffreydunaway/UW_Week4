@@ -59,7 +59,58 @@ const cards = [
  * @param {array} deck A deck of cards
  */
 const logCardDeck = deck => {
-  deck.forEach((card) => {
-    console.log(card.val, card.displayVal, card.suit);
-  });
+  let hearts = []
+  let diamonds =[]
+  let clubs = []
+  let spades =[]
+  let jokers =[]
+  let deckSize = deck.length
+  let cardCount =0
+  for(let i=0;i<deck.length;i++){
+    if(deckSize==0){
+      break
+    }
+    if(deck[i].suit=='hearts'){
+      hearts.push(`\n${deck[i].val} - ${deck[i].displayVal} - ${deck[i].suit}\n`)
+      deckSize-=1
+      cardCount+=1
+      }
+    if(deck[i].suit=='diamonds'){
+      diamonds.push(`\n${deck[i].val} - ${deck[i].displayVal} - ${deck[i].suit}\n`)
+      deckSize-=1
+      cardCount+=1
+    }
+    if(deck[i].suit=='clubs'){
+      clubs.push(`\n${deck[i].val} - ${deck[i].displayVal} - ${deck[i].suit}\n`)
+      deckSize-=1
+      cardCount+=1
+    }
+    if(deck[i].suit=='spades'){
+      spades.push(`\n${deck[i].val} - ${deck[i].displayVal} - ${deck[i].suit}\n`)
+      deckSize-=1
+      cardCount+=1
+    }
+    if(deck[i].suit=='joker'){
+      jokers.push(`\n${deck[i].val} - ${deck[i].displayVal} - ${deck[i].suit}\n`)
+      deckSize-=1
+      cardCount+=1
+    }
+  }
+  return `
+Deck of Hearts:
+      ${hearts}
+        Total in Set: ${hearts.length}
+Deck of Diamonds:
+      ${diamonds}
+        Total in Set: ${diamonds.length}
+Deck of Clubs: 
+      ${clubs}
+        Total in Set: ${clubs.length}
+Deck of Spades:
+      ${spades}
+        Total in Set: ${spades.length}
+  
+Jokers: ${jokers.length}
+Total Cards in Deck: ${cardCount}`
 };
+console.log(logCardDeck(cards))
