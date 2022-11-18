@@ -2,88 +2,123 @@
  * Returns an array of 52 Cards
  * @returns {Array} deck - a deck of cards
  */
-const getDeck = () => {
-
-}
-const cardSuit = ["hearts", "diamonds", "spades", "clubs"];
-  const faceCards = ["jack", "queen", "king", "ace"];
-  const  completeDeck = [];
-
-    for (let i = 0; i < cardSuit.length; i++) {
-        let suit = cardSuit[i];
-
-        let numberOfCardsInSuit = 1;
-        let cardNumber = 2;
-        let faceCardNumber = 0;
-
-          while (numberOfCardsInSuit < 10) {
-
-            if (numberOfCardsInSuit === 10) {
-              continue;
-            }
-
-              let deck = {
-                val: cardNumber,
-                displayVal: cardNumber.toString(),
-                suit: suit
-              }
-
-          completeDeck.push(deck);
-
-          cardNumber +=1;
-          numberOfCardsInSuit +=1;
-
-          } // number lt 10
-
-          while ( numberOfCardsInSuit >= 10 && numberOfCardsInSuit <= 12 ) {
-
-            if (numberOfCardsInSuit === 13) {
-              break;
-            }
-
-              let deck = {            
-                  val: 10,   
-                  displayVal: faceCards[faceCardNumber],   
-                  suit: suit,   
-                    } 
-
-             completeDeck.push(deck);
-
-             faceCardNumber +=1;
-             numberOfCardsInSuit +=1;       
-
-          } //number between 10 and 12
-
-          while ( numberOfCardsInSuit == 13 ) {
-
-              let deck = {            
-                 val: 11,   
-                 displayVal: faceCards[faceCardNumber],   
-                 suit: suit,   
-                 } 
-
-                completeDeck.push(deck);
-
-                numberOfCardsInSuit +=1;   
-
-           } //while 13
-
-        } //for loop
-
-        return completeDeck;
-        
-
+ const getDeck = () => {
+  let deck =[]
+  let test = 0;
+  for(let i =0;i<=52;i++){
+    if(i<13){
+      if(i == 0){
+        test+=1
+        deck.push({val:11, suit:'Hearts', displayVal:'Ace'})
+      }
+      if(0<i && i<10 ){
+        test+=1;
+        deck.push({val:test, suit:'Hearts', displayVal:test.toString()})
+      }
+      if(i==10){
+        test+=1
+        deck.push({val:10, suit:'Hearts', displayVal:'Jack'})
+      }
+      if(i==11){
+        test+=1
+        deck.push({val:10, suit:'Hearts', displayVal:'Queen'})
+      }
+      if(i==12){
+        test+=1
+        deck.push({val:10, suit:'Hearts', displayVal:'King'})
+      }
+    }
+    if(12<i){
+      if(i == 13){
+        test+=1
+        deck.push({val:11, suit:'Diamonds', displayVal:'Ace'})
+      }
+      if(13<i && i<23){
+        test+=1
+        deck.push({val:(test-13), suit:'Diamonds', displayVal:(test-13).toString()})
+      }
+      if(i==23){
+        test+=1
+        deck.push({val:10, suit:'Diamonds', displayVal:'Jack'})
+      }
+      if(i==24){
+        test+=1
+        deck.push({val:10, suit:'Diamonds', displayVal:'Queen'})
+      }
+      if(i==25){
+        test+=1
+        deck.push({val:10, suit:'Diamonds', displayVal:'King'})
+  
+      }
+    }
+    if(25<i){
+      if(i == 26){
+        test+=1
+        deck.push({val:11, suit:'Clubs', displayVal:'Ace'})
+      }
+      if(26<i && i<36){
+        test+=1
+        deck.push({val:(test-26), suit:'Clubs', displayVal:(test-26).toString()})
+      }
+      if(i==36){
+        test+=1
+        deck.push({val:10, suit:'Clubs', displayVal:'Jack'})
+      }
+      if(i==37){
+        test+=1
+        deck.push({val:10, suit:'Clubs', displayVal:'Queen'})
+      }
+      if(i==38){
+        test+=1
+        deck.push({val:10, suit:'Clubs', displayVal:'King'})
+      }
+    }
+    if(38<i){
+      if(i == 39){
+        test+=1
+        deck.push({val:11, suit:'Spades', displayVal:'Ace'})
+      }
+      if(40<i && i<50){
+        test+=1
+        deck.push({val:(test-39), suit:'Spades', displayVal:(test-39).toString()})
+      }
+      if(i==50){
+        test+=1
+        deck.push({val:10, suit:'Spades', displayVal:'Jack'})
+      }
+      if(i==51){
+        test+=1
+        deck.push({val:10, suit:'Spades', displayVal:'Queen'})
+      }
+      if(i==52){
+        test+=1
+        deck.push({val:10, suit:'Spades', displayVal:'King'})
+      }
+  
+    }
+  }
+  return deck
+  }
+  
+  console.log(getDeck())
 // CHECKS
 const deck = getDeck();
 console.log(`Deck length equals 52? ${deck.length === 52}`);
 
 const randomCard = deck[Math.floor(Math.random() * 52)];
-
+console.log(randomCard)
 const cardHasVal = randomCard && randomCard.val && typeof randomCard.val === 'number';
 console.log(`Random card has val? ${cardHasVal}`);
 
 const cardHasSuit = randomCard && randomCard.suit && typeof randomCard.suit === 'string';
 console.log(`Random card has suit? ${cardHasSuit}`);
+
+const cardHasDisplayVal = randomCard &&
+  randomCard.displayVal &&
+  typeof randomCard.displayVal === 'string';
+
+  console.log(`Random card has display value? ${cardHasDisplayVal}`);
+  
 
 const cardHasDisplayVal = randomCard &&
   randomCard.displayVal &&
