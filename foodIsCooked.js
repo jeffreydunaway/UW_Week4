@@ -15,7 +15,7 @@ const foodIsCooked = function(kind, internalTemp, doneness , isCooked=true) {
   }
   if(kind==='beef'){
     if(doneness==='rare'){
-      if(125<=internalTemp && internalTemp<135){
+      if(125<=internalTemp && internalTemp<138){
 
         return `\nBeef is Cooked: ${isCooked}`
       }else{
