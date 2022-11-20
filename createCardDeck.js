@@ -118,9 +118,3 @@ const cardHasDisplayVal = randomCard &&
   typeof randomCard.displayVal === 'string';
 
   console.log(`Random card has display value? ${cardHasDisplayVal}`);
-  
-
-const cardHasDisplayVal = randomCard &&
-  randomCard.displayVal &&
-  typeof randomCard.displayVal === 'string';
-console.log(`Random card has display value? ${cardHasDisplayVal}`);
