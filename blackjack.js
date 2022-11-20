@@ -189,7 +189,7 @@ const determineWinner = (playerScore, dealerScore) => {
 //    }
 
   console.log(`Player stands at ${playerScore}`);playerScore = calcPoints(player.hand).total;
-  #8 Extra Credit:
+  //#8 Extra Credit:
   if(playerScore ===21 || dealerScore ===21 ){
       if(playerScore===dealerScore){
           showHand(dealer)
